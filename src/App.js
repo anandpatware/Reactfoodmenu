@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import Card from "./Components/Card";
+import { Route, Routes } from "react-router-dom";
+import foodData from "./Components/fooddata";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Card />} />
+        <Route
+          path="/breakfast"
+          element={
+            <div
+              className="card-container"
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+              }}
+            >
+              {foodData.map((ele, index) => (
+                <Card
+                  name={ele.name}
+                  image={ele.imageUrl}
+                  desc={ele.description}
+                  price={ele.price}
+                  key={index}
+                />
+              ))}
+            </div>
+          }
+        />
+        <Route path="/lunch" element={<Card />} />
+      </Routes>
     </div>
   );
 }
