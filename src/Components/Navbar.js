@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <>
@@ -14,18 +14,54 @@ function Navbar() {
           alignItems: "center",
         }}
       >
-        <Link to="/breakfast" className="btn1">
+        <NavLink
+          to="/breakfast"
+          className="btn1"
+          style={{
+            padding: "1rem",
+            backgroundColor: "lightblue",
+            textDecoration: "none",
+            fontFamily: "monospace",
+          }}
+        >
           Breakfast
-        </Link>
-        <Link to="/lunch" className="btn2">
+        </NavLink>
+        <NavLink
+          to="/lunch"
+          className="btn2"
+          style={{
+            padding: "1rem",
+            backgroundColor: "lightblue",
+            textDecoration: "none",
+            fontFamily: "monospace",
+          }}
+        >
           Lunch
-        </Link>
-        <Link to="/dinner" className="btn3">
+        </NavLink>
+        <NavLink
+          to="/dinner"
+          className="btn3"
+          style={{
+            padding: "1rem",
+            backgroundColor: "lightblue",
+            textDecoration: "none",
+            fontFamily: "monospace",
+          }}
+        >
           Dinner
-        </Link>
-        <Link to="/all" className="btn4">
+        </NavLink>
+        <NavLink
+          to="/all"
+          className="btn4"
+          style={{
+            padding: "1rem",
+            backgroundColor: "lightblue",
+            textDecoration: "none",
+            fontFamily: "monospace",
+          }}
+        >
           All
-        </Link>
+        </NavLink>
       </div>
     </>
   );
